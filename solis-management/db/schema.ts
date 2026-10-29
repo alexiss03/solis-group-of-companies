@@ -1,0 +1,11 @@
+import { sqliteTable, text, real, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
+export const workspaces = sqliteTable('cms_workspaces', { owner: text('owner').primaryKey(), initializedAt: text('initialized_at').notNull() });
+export const companies = sqliteTable('cms_companies', {
+ id: text('id').primaryKey(), owner: text('owner').notNull(), name: text('name').notNull(), slug: text('slug'), category: text('category').notNull(), website: text('website').notNull().default(''), status: text('status').notNull().default('In development'), logo: text('logo').notNull().default(''), archived: integer('archived').notNull().default(0), createdAt: text('created_at').notNull(), updatedAt: text('updated_at').notNull(),
+}, t => [index('cms_company_owner_idx').on(t.owner, t.archived), uniqueIndex('cms_company_slug_unique').on(t.owner, t.slug)]);
+export const records = sqliteTable('cms_records', {
+ id: text('id').primaryKey(), owner: text('owner').notNull(), companyId: text('company_id').notNull().references(() => companies.id), kind: text('kind').notNull(), name: text('name').notNull(), status: text('status').notNull().default('Active'), data: text('data').notNull().default('{}'), sku: text('sku'), quantity: real('quantity').notNull().default(0), reorderLevel: real('reorder_level').notNull().default(0), version: integer('version').notNull().default(0), lastMovement: text('last_movement'), archived: integer('archived').notNull().default(0), createdAt: text('created_at').notNull(), updatedAt: text('updated_at').notNull(),
+}, t => [index('cms_record_owner_idx').on(t.owner, t.kind, t.companyId, t.archived), uniqueIndex('cms_sku_unique').on(t.owner, t.companyId, t.kind, t.sku)]);
+export const movements = sqliteTable('cms_movements', {
+ id: text('id').primaryKey(), owner: text('owner').notNull(), companyId: text('company_id').notNull().references(() => companies.id), itemId: text('item_id').notNull().references(() => records.id), type: text('type').notNull(), delta: real('delta').notNull(), before: real('before_quantity').notNull(), after: real('after_quantity').notNull(), note: text('note').notNull(), createdAt: text('created_at').notNull(),
+}, t => [index('cms_movement_owner_idx').on(t.owner, t.createdAt)]);

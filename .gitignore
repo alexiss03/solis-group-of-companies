@@ -1,0 +1,19 @@
+# Dependencies and generated local state
+**/node_modules/
+**/.wrangler/
+**/.sites-runtime/
+**/.next/
+**/.vinext/
+**/supabase/.temp/
+**/*.tsbuildinfo
+**/.DS_Store
+# Runtime secrets and local database exports
+**/.env*
+!**/.env.example
+**/.dev.vars*
+**/*.pem
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+# Local publication packages
+*-deploy.tar.gz

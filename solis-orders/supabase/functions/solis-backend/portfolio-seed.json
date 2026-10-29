@@ -1,0 +1,242 @@
+[
+  {
+    "sourceId": 1,
+    "name": "Resume Layout Studio",
+    "category": "Technology",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 2,
+    "name": "Pre-loved by Lhota",
+    "category": "Commerce",
+    "website": "",
+    "status": "In development",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/lhota.svg"
+  },
+  {
+    "sourceId": 3,
+    "name": "Novel Maker",
+    "category": "Culture & Community",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 4,
+    "name": "Pathlight",
+    "category": "Culture & Community",
+    "website": "https://pathlight-bible-study.starry-bread-6520.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 5,
+    "name": "Help Save",
+    "category": "Culture & Community",
+    "website": "",
+    "status": "In development",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/help-save.png"
+  },
+  {
+    "sourceId": 6,
+    "name": "Parna",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 7,
+    "name": "Pasalo",
+    "category": "Commerce",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 8,
+    "name": "Dctor · Development",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/dctor.svg"
+  },
+  {
+    "sourceId": 9,
+    "name": "Doctor Appointment",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/doctor-appointment.svg"
+  },
+  {
+    "sourceId": 10,
+    "name": "Stria",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 12,
+    "name": "Lakbay",
+    "category": "Travel & Experiences",
+    "website": "https://lakbay-founding-access.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/lakbay.svg"
+  },
+  {
+    "sourceId": 13,
+    "name": "Smart Reminder",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 14,
+    "name": "Sports",
+    "category": "Technology",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 15,
+    "name": "ÉDIT",
+    "category": "Style & Design",
+    "website": "https://edit-fashion-journal-mas.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 16,
+    "name": "Chainlab",
+    "category": "Technology",
+    "website": "",
+    "status": "In development",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/chainlab.svg"
+  },
+  {
+    "sourceId": 17,
+    "name": "The Wedding Architect",
+    "category": "Style & Design",
+    "website": "https://the-wedding-architect-studio.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 18,
+    "name": "Lexi Solis",
+    "category": "Style & Design",
+    "website": "https://lexi-solis-creative-portfolio.starry-bread-6520.chatgpt.site",
+    "status": "Published",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/lexi-solis.svg"
+  },
+  {
+    "sourceId": 19,
+    "name": "Spido Recipes",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/spido.png"
+  },
+  {
+    "sourceId": 20,
+    "name": "Dctor",
+    "category": "Living & Wellbeing",
+    "website": "https://dctor-dashboard.starry-bread-6520.chatgpt.site",
+    "status": "Published",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/dctor.svg"
+  },
+  {
+    "sourceId": 21,
+    "name": "Aurelia",
+    "category": "Style & Design",
+    "website": "https://aurelia-collection.starry-bread-6520.chatgpt.site",
+    "status": "Published",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/aurelia.svg"
+  },
+  {
+    "sourceId": 22,
+    "name": "Novel Reader",
+    "category": "Culture & Community",
+    "website": "https://novel-reader-20261014.starry-bread-6520.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 23,
+    "name": "House of Solis",
+    "category": "Style & Design",
+    "website": "https://house-of-solis.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 24,
+    "name": "Pulse",
+    "category": "Technology",
+    "website": "https://pulse-early-access.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/pulse.png"
+  },
+  {
+    "sourceId": 25,
+    "name": "ScrumHub",
+    "category": "Technology",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 26,
+    "name": "Filter",
+    "category": "Technology",
+    "website": "",
+    "status": "Concept",
+    "logo": ""
+  },
+  {
+    "sourceId": 27,
+    "name": "Open Model Console",
+    "category": "Technology",
+    "website": "",
+    "status": "In development",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/open-model.svg"
+  },
+  {
+    "sourceId": 28,
+    "name": "Fashion Photography",
+    "category": "Style & Design",
+    "website": "",
+    "status": "Concept",
+    "logo": ""
+  },
+  {
+    "sourceId": 31,
+    "name": "Date Planner",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 32,
+    "name": "Keepsake",
+    "category": "Culture & Community",
+    "website": "https://keepsake-journal-albums.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/keepsake.svg"
+  },
+  {
+    "sourceId": 33,
+    "name": "The Cake Architect",
+    "category": "Style & Design",
+    "website": "https://butter-and-bloom-cake-atelier.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/cake-architect.svg"
+  }
+]

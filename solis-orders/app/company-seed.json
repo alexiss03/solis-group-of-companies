@@ -1,0 +1,242 @@
+[
+  {
+    "slug": "resume-layout-studio",
+    "name": "Resume Layout Studio",
+    "category": "Technology",
+    "description": "A resume builder that turns pasted text into formatted, printable layouts.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "pre-loved-by-lhota",
+    "name": "Pre-loved by Lhota",
+    "category": "Commerce",
+    "description": "A storefront project for preloved clothes, bags, and other finds.",
+    "website": "",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/lhota.svg"
+  },
+  {
+    "slug": "novel-maker",
+    "name": "Novel Maker",
+    "category": "Culture & Community",
+    "description": "A web-based novel-making project and writing workspace.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "pathlight",
+    "name": "Pathlight",
+    "category": "Culture & Community",
+    "description": "A Bible study space for reading, reflection, prayer, and a shared study circle.",
+    "website": "https://pathlight-bible-study.starry-bread-6520.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "help-save",
+    "name": "Help Save",
+    "category": "Culture & Community",
+    "description": "A mobile app development project with API, Android, and iOS workspaces.",
+    "website": "",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/help-save.png"
+  },
+  {
+    "slug": "parna",
+    "name": "Parna",
+    "category": "Living & Wellbeing",
+    "description": "A plant-care app project with plant search and watering recommendations.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "pasalo",
+    "name": "Pasalo",
+    "category": "Commerce",
+    "description": "A property marketplace project with listings, discovery, and early-access registration.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "dctor-development",
+    "name": "Dctor · Development",
+    "category": "Living & Wellbeing",
+    "description": "A development workspace for the Dctor healthcare project and native iOS work.",
+    "website": "",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/dctor.svg"
+  },
+  {
+    "slug": "doctor-appointment",
+    "name": "Doctor Appointment",
+    "category": "Living & Wellbeing",
+    "description": "A doctor discovery and appointment booking project with web and mobile interfaces.",
+    "website": "",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/doctor-appointment.svg"
+  },
+  {
+    "slug": "stria",
+    "name": "Stria",
+    "category": "Living & Wellbeing",
+    "description": "A habit tracker built around one habit, daily check-ins, and small wins.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "lakbay",
+    "name": "Lakbay",
+    "category": "Travel & Experiences",
+    "description": "Story-led journeys, founding memberships, and early-access reservations.",
+    "website": "https://lakbay-founding-access.cynammon.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/lakbay.svg"
+  },
+  {
+    "slug": "smart-reminder",
+    "name": "Smart Reminder",
+    "category": "Living & Wellbeing",
+    "description": "A reminder app project for medication schedules, plans, and everyday tasks.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "sports",
+    "name": "Sports",
+    "category": "Technology",
+    "description": "A sports-focused project with web, backend, and iOS components.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "edit",
+    "name": "ÉDIT",
+    "category": "Style & Design",
+    "description": "An independent fashion journal on style, beauty, culture, and considered living.",
+    "website": "https://edit-fashion-journal-mas.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "chainlab",
+    "name": "Chainlab",
+    "category": "Technology",
+    "description": "An educational blockchain explorer for demo transfers, blocks, and proof of work.",
+    "website": "",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/chainlab.svg"
+  },
+  {
+    "slug": "the-wedding-architect",
+    "name": "The Wedding Architect",
+    "category": "Style & Design",
+    "description": "An editorial wedding design studio concept, with spatial inspiration and an interactive celebration brief.",
+    "website": "https://the-wedding-architect-studio.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "lexi-solis",
+    "name": "Lexi Solis",
+    "category": "Style & Design",
+    "description": "Photography, art, words, and visual stories by Mary Alexis Solis.",
+    "website": "https://lexi-solis-creative-portfolio.starry-bread-6520.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/lexi-solis.svg"
+  },
+  {
+    "slug": "spido-recipes",
+    "name": "Spido Recipes",
+    "category": "Living & Wellbeing",
+    "description": "A recipe collection with ingredients, guided cooking steps, timers, and meal planning.",
+    "website": "",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/spido.png"
+  },
+  {
+    "slug": "dctor",
+    "name": "Dctor",
+    "category": "Living & Wellbeing",
+    "description": "A patient dashboard with appointment booking and care navigation.",
+    "website": "https://dctor-dashboard.starry-bread-6520.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/dctor.svg"
+  },
+  {
+    "slug": "aurelia",
+    "name": "Aurelia",
+    "category": "Style & Design",
+    "description": "A buyer catalog presenting a collection of gold, gemstones, and pearls.",
+    "website": "https://aurelia-collection.starry-bread-6520.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/aurelia.svg"
+  },
+  {
+    "slug": "novel-reader",
+    "name": "Novel Reader",
+    "category": "Culture & Community",
+    "description": "A quiet reader and writing workspace for a developing manuscript.",
+    "website": "https://novel-reader-20261014.starry-bread-6520.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "house-of-solis",
+    "name": "House of Solis",
+    "category": "Style & Design",
+    "description": "A fashion house exploring considered silhouettes and a refined, minimalist wardrobe.",
+    "website": "https://house-of-solis.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "pulse",
+    "name": "Pulse",
+    "category": "Technology",
+    "description": "A Telegram-style messaging project with a quieter, local-first direction.",
+    "website": "https://pulse-early-access.cynammon.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/pulse.png"
+  },
+  {
+    "slug": "scrumhub",
+    "name": "ScrumHub",
+    "category": "Technology",
+    "description": "A workspace for agile planning, scrum ceremonies, and connected application services.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "filter",
+    "name": "Filter",
+    "category": "Technology",
+    "description": "An early project workspace. A description will be added as the concept develops.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "open-model-console",
+    "name": "Open Model Console",
+    "category": "Technology",
+    "description": "A local, experimental workspace for building and training small language models.",
+    "website": "",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/open-model.svg"
+  },
+  {
+    "slug": "fashion-photography",
+    "name": "Fashion Photography",
+    "category": "Style & Design",
+    "description": "A space for a fashion photography project. Project details are still to come.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "date-planner",
+    "name": "Date Planner",
+    "category": "Living & Wellbeing",
+    "description": "An in-progress exploration of an iOS-style date planning app.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "keepsake",
+    "name": "Keepsake",
+    "category": "Culture & Community",
+    "description": "A personal journal and photo album studio with thoughtful templates, printable memory pages, and browser-local saving.",
+    "website": "https://keepsake-journal-albums.cynammon.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/keepsake.svg"
+  },
+  {
+    "slug": "the-cake-architect",
+    "name": "The Cake Architect",
+    "category": "Style & Design",
+    "description": "Butter & Bloom, a custom cake atelier concept with a design gallery and an interactive cake brief.",
+    "website": "https://butter-and-bloom-cake-atelier.cynammon.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/cake-architect.svg"
+  }
+]

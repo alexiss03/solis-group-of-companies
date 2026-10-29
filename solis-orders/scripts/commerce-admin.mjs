@@ -1,0 +1,17 @@
+import {readFile} from 'node:fs/promises';
+const origin=process.argv[2];
+if(!origin||!/^https:\/\/[^/]+\.chatgpt\.site$/.test(origin))throw new Error('Use the exact deployed Sites origin.');
+if(process.stdin.isTTY)process.stdin.setRawMode(true);
+process.stdout.write('Ready for server credential JSON on stdin (input is hidden).\n');
+const input=await new Promise((resolve,reject)=>{let value='';process.stdin.setEncoding('utf8');process.stdin.on('data',chunk=>{value+=chunk;if(value.includes('\n')){process.stdin.pause();resolve(value.slice(0,value.indexOf('\n')));}});process.stdin.on('error',reject);process.stdin.resume();});
+if(process.stdin.isTTY)process.stdin.setRawMode(false);
+const {key}=JSON.parse(input);
+if(!key||key.length<32)throw new Error('A valid server credential is required.');
+const companies=JSON.parse(await readFile(new URL('../app/company-seed.json',import.meta.url),'utf8'));
+const seeded=await fetch(origin+'/api/commerce/bridge/sync',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({companies})});
+if(!seeded.ok)throw new Error('Company sync failed with status '+seeded.status);
+const catalog=await fetch(origin+'/api/commerce/companies');const catalogData=await catalog.json();
+const orders=await fetch(origin+'/api/commerce/bridge/orders',{headers:{'Authorization':'Bearer '+key}});const orderData=await orders.json();
+const denied=await fetch(origin+'/api/commerce/orders?company=the-cake-architect');
+console.log(JSON.stringify({seeded:seeded.status,companyCount:catalogData.companies?.length,serverOrderRead:orders.status,orderCount:orderData.orders?.length,anonymousOrderRead:denied.status}));
+if(catalogData.companies?.length!==companies.length||orders.status!==200||denied.status!==401)process.exitCode=1;

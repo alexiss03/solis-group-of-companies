@@ -1,0 +1,19 @@
+import { sqliteTable, text, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
+export const companies=sqliteTable('commerce_companies',{
+ slug:text('slug').primaryKey(),name:text('name').notNull(),category:text('category').notNull(),description:text('description').notNull(),website:text('website').notNull().default(''),logo:text('logo').notNull().default(''),accepting:integer('accepting').notNull().default(1),archived:integer('archived').notNull().default(0),updatedAt:text('updated_at').notNull(),
+});
+export const profiles=sqliteTable('commerce_profiles',{
+ companySlug:text('company_slug').primaryKey().references(()=>companies.slug),location:text('location').notNull(),deliveryScope:text('delivery_scope').notNull(),deliveryAreas:text('delivery_areas').notNull().default(''),deliveryNotes:text('delivery_notes').notNull().default(''),methods:text('methods').notNull(),version:integer('version').notNull().default(0),updatedAt:text('updated_at').notNull(),
+});
+export const offerings=sqliteTable('commerce_offerings',{
+ id:text('id').primaryKey(),companySlug:text('company_slug').notNull().references(()=>companies.slug),name:text('name').notNull(),description:text('description').notNull().default(''),kind:text('kind').notNull(),pricing:text('pricing').notNull(),priceMinor:integer('price_minor'),currency:text('currency').notNull(),unit:text('unit').notNull(),leadMin:integer('lead_min').notNull(),leadMax:integer('lead_max').notNull(),leadUnit:text('lead_unit').notNull(),active:integer('active').notNull().default(1),version:integer('version').notNull().default(0),createdAt:text('created_at').notNull(),updatedAt:text('updated_at').notNull(),
+},t=>[index('commerce_offerings_company_idx').on(t.companySlug,t.active)]);
+export const orders=sqliteTable('commerce_orders',{
+ id:text('id').primaryKey(),reference:text('reference').notNull().unique(),companySlug:text('company_slug').notNull().references(()=>companies.slug),customerName:text('customer_name').notNull(),customerEmail:text('customer_email').notNull(),customerPhone:text('customer_phone').notNull().default(''),type:text('type').notNull(),title:text('title').notNull(),details:text('details').notNull(),quantity:integer('quantity'),desiredDate:text('desired_date'),method:text('method').notNull(),location:text('location').notNull().default(''),status:text('status').notNull().default('New'),trackingHash:text('tracking_hash').notNull(),requestKey:text('request_key').notNull(),offeringId:text('offering_id').references(()=>offerings.id),offeringSnapshot:text('offering_snapshot').notNull().default('{}'),rateKey:text('rate_key').notNull(),version:integer('version').notNull().default(0),lastEvent:text('last_event'),fulfillmentNote:text('fulfillment_note').notNull().default(''),fulfilledAt:text('fulfilled_at'),createdAt:text('created_at').notNull(),updatedAt:text('updated_at').notNull(),
+},t=>[index('commerce_orders_company_idx').on(t.companySlug,t.createdAt),index('commerce_orders_rate_idx').on(t.rateKey),uniqueIndex('commerce_request_unique').on(t.companySlug,t.requestKey)]);
+export const events=sqliteTable('commerce_events',{
+ id:text('id').primaryKey(),orderId:text('order_id').notNull().references(()=>orders.id),companySlug:text('company_slug').notNull().references(()=>companies.slug),status:text('status').notNull(),publicNote:text('public_note').notNull().default(''),internalNote:text('internal_note').notNull().default(''),actorEmail:text('actor_email').notNull().default(''),createdAt:text('created_at').notNull(),
+},t=>[index('commerce_events_order_idx').on(t.orderId,t.createdAt)]);
+export const members=sqliteTable('commerce_members',{
+ id:text('id').primaryKey(),companySlug:text('company_slug').notNull().references(()=>companies.slug),email:text('email').notNull(),active:integer('active').notNull().default(1),createdAt:text('created_at').notNull(),
+},t=>[uniqueIndex('commerce_member_unique').on(t.companySlug,t.email)]);
