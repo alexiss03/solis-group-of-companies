@@ -386,5 +386,19 @@
     "logoLayout": "square",
     "status": "Published",
     "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/the-cake-architect"
+  },
+  {
+    "id": 34,
+    "source": "Ride Hailing App",
+    "name": "Tara",
+    "category": "Technology",
+    "description": "A ride-booking prototype for cars, tricycles, and motorcycles, with Batangas and Metro Manila demo areas. Rides, drivers, and fares are simulated.",
+    "mark": "T",
+    "url": "https://tara-everyday-ride-masol.cynammon.chatgpt.site",
+    "image": null,
+    "logo": "logos/tara.svg",
+    "logoLayout": "square",
+    "status": "Published",
+    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/tara"
   }
 ]

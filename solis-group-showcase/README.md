@@ -1,6 +1,6 @@
 # Solis Group of Companies
 
-A buildless, responsive portfolio showcasing 30 projects returned by the Codex project inventory on October 27, 2026. The group website itself is the umbrella, rather than a duplicate directory entry.
+A buildless, responsive portfolio showcasing 31 projects from the Codex project inventory, including Tara. The group website itself is the umbrella, rather than a duplicate directory entry.
 
 Serve `dist/` with a static HTTP server. Project content is in `dist/projects.json`; imagery is reused from the user's existing project assets. No private local paths, app data, credentials, patient records, or manuscript contents are included in the website.
 

@@ -4,7 +4,7 @@ Private, persistent company operations CMS. The existing public showcase remains
 
 ## Features
 
-- A company directory, initially copied from the 30-company public portfolio on the first signed-in visit.
+- A company directory, initially copied from the 31-company public portfolio on the first signed-in visit.
 - Add, edit, archive, and restore suppliers, employees, inventory items, and companies.
 - Company filters, search, low/out-of-stock views, and CSV export of the current view.
 - Inventory SKU, unit, supplier, storage location, reorder level, cost, and currency.

@@ -1,6 +1,6 @@
 # Solis Orders & Services
 
-A public company request portal and protected merchant order workspace. The 30 public company profiles are seeded from the Solis public portfolio. The existing inventory CMS remains private.
+A public company request portal and protected merchant order workspace. The 31 public company profiles are seeded from the Solis public portfolio. The existing inventory CMS remains private.
 
 ## Customer flow
 

@@ -238,5 +238,13 @@
     "description": "Butter & Bloom, a custom cake atelier concept with a design gallery and an interactive cake brief.",
     "website": "https://butter-and-bloom-cake-atelier.cynammon.chatgpt.site",
     "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/cake-architect.svg"
+  },
+  {
+    "slug": "tara",
+    "name": "Tara",
+    "category": "Technology",
+    "description": "A ride-booking prototype for cars, tricycles, and motorcycles, with Batangas and Metro Manila demo areas. Rides, drivers, and fares are simulated.",
+    "website": "https://tara-everyday-ride-masol.cynammon.chatgpt.site",
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/tara.svg"
   }
 ]

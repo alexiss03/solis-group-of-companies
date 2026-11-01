@@ -4,7 +4,7 @@ Source for the public company showcase, company order and service request portal
 
 | Project | Purpose | Live site |
 | --- | --- | --- |
-| [solis-group-showcase](solis-group-showcase) | Public portfolio of 30 companies | [Company showcase](https://solis-group-of-companies.cynammon.chatgpt.site/) |
+| [solis-group-showcase](solis-group-showcase) | Public portfolio of 31 companies | [Company showcase](https://solis-group-of-companies.cynammon.chatgpt.site/) |
 | [solis-orders](solis-orders) | Public requests, customer tracking, merchant offerings, pricing, lead times, locations, delivery coverage, and fulfillment | [Orders & Services](https://solis-orders-services.cynammon.chatgpt.site/) |
 | [solis-management](solis-management) | Private company inventory, suppliers, employees, stock movements, and order management | [Company Management](https://solis-company-management.cynammon.chatgpt.site/) |
 
