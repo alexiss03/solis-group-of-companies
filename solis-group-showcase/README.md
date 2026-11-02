@@ -6,7 +6,7 @@ Serve `dist/` with a static HTTP server. Project content is in `dist/projects.js
 
 Published website links come from the connected Sites inventory. Projects without a verified website appear as project workspaces. Tradepal and Springchat Core projects are excluded at the user’s request. Other related project versions remain individual entries. This is a snapshot; it does not automatically synchronize with Codex.
 
-Features: category and availability filters, combined full-text search, project detail dialogs, responsive layouts, keyboard navigation, reduced-motion support, and links to twelve existing project websites.
+Features: category and availability filters, combined full-text search, project detail dialogs, responsive layouts, keyboard navigation, reduced-motion support, and links to thirteen existing project websites.
 
 Keepsake (Printed journal) was added on October 28, 2026 under Culture & Community.
 
@@ -16,4 +16,4 @@ Progress status is explicit in projects.json: Published for hosted website entri
 
 The Cake Architect (Butter & Bloom) was added on October 29, 2026. A footer link leads to the separate private Solis Company Management CMS; operational records are never loaded on this public site.
 
-All company detail panels link to their public order/service request page on the separate Orders & Services portal. Merchant inboxes and fulfillment are protected in that portal; no customer orders are read by this static showcase.
+Company detail actions open a verified native app workflow when available, including booking, inquiries, brief builders, catalogs, and self-service studios. Labels describe the actual flow, including demos and local briefs. Companies without a linked app keep their public Solis request page. Native app entries also retain a separate Solis request link. Merchant inboxes and fulfillment are protected in that portal; no customer orders are read by this static showcase.

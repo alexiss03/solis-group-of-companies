@@ -47,7 +47,10 @@
     "url": "https://pathlight-bible-study.starry-bread-6520.chatgpt.site",
     "image": null,
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/pathlight"
+    "orderUrl": "https://pathlight-bible-study.starry-bread-6520.chatgpt.site",
+    "orderLabel": "Open the study space",
+    "orderNote": "Continue to the Bible study and reflection app.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/pathlight?via=solis"
   },
   {
     "id": 5,
@@ -139,7 +142,10 @@
     "logo": "logos/lakbay.svg",
     "logoLayout": "square",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/lakbay"
+    "orderUrl": "https://lakbay-founding-access.cynammon.chatgpt.site/early-access",
+    "orderLabel": "Reserve founding access",
+    "orderNote": "Choose a founding membership and continue through Lakbay’s reservation flow.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/lakbay?via=solis"
   },
   {
     "id": 13,
@@ -175,7 +181,10 @@
     "url": "https://edit-fashion-journal-mas.cynammon.chatgpt.site",
     "image": "journal.jpg",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/edit"
+    "orderUrl": "https://edit-fashion-journal-mas.cynammon.chatgpt.site#latest",
+    "orderLabel": "Read the journal",
+    "orderNote": "Explore stories and reading tools in ÉDIT.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/edit?via=solis"
   },
   {
     "id": 16,
@@ -201,7 +210,10 @@
     "url": "https://the-wedding-architect-studio.cynammon.chatgpt.site",
     "image": "wedding.jpg",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/the-wedding-architect"
+    "orderUrl": "https://the-wedding-architect-studio.cynammon.chatgpt.site#begin",
+    "orderLabel": "Start a wedding brief",
+    "orderNote": "Build your wedding brief in The Wedding Architect. The builder saves a draft; it does not confirm a booking.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/the-wedding-architect?via=solis"
   },
   {
     "id": 18,
@@ -215,7 +227,10 @@
     "logo": "logos/lexi-solis.svg",
     "logoLayout": "square",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/lexi-solis"
+    "orderUrl": "https://lexi-solis-creative-portfolio.starry-bread-6520.chatgpt.site#contact",
+    "orderLabel": "Contact the studio",
+    "orderNote": "Contact Lexi Solis about creative work, collaborations, or commissions.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/lexi-solis?via=solis"
   },
   {
     "id": 19,
@@ -243,7 +258,10 @@
     "logo": "logos/dctor.svg",
     "logoLayout": "wide",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/dctor"
+    "orderUrl": "https://dctor-dashboard.starry-bread-6520.chatgpt.site/search",
+    "orderLabel": "Find a doctor",
+    "orderNote": "Find a doctor and continue through Dctor’s own appointment flow.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/dctor?via=solis"
   },
   {
     "id": 21,
@@ -257,7 +275,10 @@
     "logo": "logos/aurelia.svg",
     "logoLayout": "square",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/aurelia"
+    "orderUrl": "https://aurelia-collection.starry-bread-6520.chatgpt.site#collection",
+    "orderLabel": "Browse the collection",
+    "orderNote": "Browse available jewelry in Aurelia. For a purchase inquiry, you can also send a request through Solis.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/aurelia?via=solis"
   },
   {
     "id": 22,
@@ -269,7 +290,10 @@
     "url": "https://novel-reader-20261014.starry-bread-6520.chatgpt.site",
     "image": null,
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/novel-reader"
+    "orderUrl": "https://novel-reader-20261014.starry-bread-6520.chatgpt.site",
+    "orderLabel": "Open the reader",
+    "orderNote": "Continue to the manuscript reading and writing workspace.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/novel-reader?via=solis"
   },
   {
     "id": 23,
@@ -281,7 +305,10 @@
     "url": "https://house-of-solis.cynammon.chatgpt.site",
     "image": "fashion.jpg",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/house-of-solis"
+    "orderUrl": "https://house-of-solis.cynammon.chatgpt.site/inquiry.html",
+    "orderLabel": "Inquire with the atelier",
+    "orderNote": "Send fitting, dress, or bespoke requests through the House of Solis inquiry page.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/house-of-solis?via=solis"
   },
   {
     "id": 24,
@@ -295,7 +322,10 @@
     "logo": "logos/pulse.png",
     "logoLayout": "square",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/pulse"
+    "orderUrl": "https://pulse-early-access.cynammon.chatgpt.site",
+    "orderLabel": "Join early access",
+    "orderNote": "Continue to Pulse’s own early-access page.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/pulse?via=solis"
   },
   {
     "id": 25,
@@ -371,7 +401,10 @@
     "logo": "logos/keepsake.svg",
     "logoLayout": "square",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/keepsake"
+    "orderUrl": "https://keepsake-journal-albums.cynammon.chatgpt.site#templates",
+    "orderLabel": "Open the journal studio",
+    "orderNote": "Choose a journal or album template and create it in Keepsake. Memories stay on your device.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/keepsake?via=solis"
   },
   {
     "id": 33,
@@ -385,7 +418,10 @@
     "logo": "logos/cake-architect.svg",
     "logoLayout": "square",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/the-cake-architect"
+    "orderUrl": "https://butter-and-bloom-cake-atelier.cynammon.chatgpt.site#collection",
+    "orderLabel": "Create a cake brief",
+    "orderNote": "Choose a cake and use Create your cake in Butter & Bloom. The builder saves a brief; it does not place an order.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/the-cake-architect?via=solis"
   },
   {
     "id": 34,
@@ -399,6 +435,9 @@
     "logo": "logos/tara.svg",
     "logoLayout": "square",
     "status": "Published",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/tara"
+    "orderUrl": "https://tara-everyday-ride-masol.cynammon.chatgpt.site#book-view",
+    "orderLabel": "Book a demo ride",
+    "orderNote": "Choose a car, tricycle, or motorcycle in Tara. Rides, fares, and driver matching are simulated.",
+    "solisOrderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/tara?via=solis"
   }
 ]
