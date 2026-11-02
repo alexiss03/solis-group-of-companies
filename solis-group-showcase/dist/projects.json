@@ -353,17 +353,17 @@
   },
   {
     "id": 27,
-    "source": "AI",
-    "name": "Open Model Console",
+    "source": "Rover AI",
+    "name": "Rover AI",
     "category": "Technology",
-    "description": "A local, experimental workspace for building and training small language models.",
-    "mark": "AI",
+    "description": "An AI venture developing software subscriptions, business automation, and custom AI solutions, with a local experimental model-training workspace.",
+    "mark": "RA",
     "url": null,
     "image": null,
     "logo": "logos/open-model.svg",
     "logoLayout": "square",
     "status": "In development",
-    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/open-model-console"
+    "orderUrl": "https://solis-orders-services.cynammon.chatgpt.site/companies/rover-ai"
   },
   {
     "id": 28,

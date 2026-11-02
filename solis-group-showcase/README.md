@@ -17,3 +17,7 @@ Progress status is explicit in projects.json: Published for hosted website entri
 The Cake Architect (Butter & Bloom) was added on October 29, 2026. A footer link leads to the separate private Solis Company Management CMS; operational records are never loaded on this public site.
 
 Company detail actions open a verified native app workflow when available, including booking, inquiries, brief builders, catalogs, and self-service studios. Labels describe the actual flow, including demos and local briefs. Companies without a linked app keep their public Solis request page. Native app entries also retain a separate Solis request link. Merchant inboxes and fulfillment are protected in that portal; no customer orders are read by this static showcase.
+
+## Rover AI
+
+The Codex AI project is now listed as Rover AI (In development), replacing its former Open Model Console display name. It describes planned AI software, automation, and custom development alongside the existing local experimental training workspace. No public model endpoint, benchmark, patent status, subscription checkout, or customer metrics are claimed. Stable company IDs and the `open-model-console` operational slug are retained to preserve records and access. The public request page also supports `/companies/rover-ai`; the old path continues to work. The retained project icon is used until a separate brand asset is supplied.

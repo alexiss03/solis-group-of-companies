@@ -53,3 +53,8 @@ The company catalog supports products and services with fixed prices, starting p
 Customers select an offering on the company page, see price/lead time/coverage, and choose only arrangements supported by that merchant. Delivery and on-site requests require coverage confirmation. The backend rejects stale listing/coverage versions and uses the server's price. Each request stores a permanent public snapshot of the offering and estimated amount, shown in the inbox and private tracking page. Changes to the catalog do not rewrite submitted orders. Coverage is described by the merchant and confirmed during review; there is no automatic geographic or shipping-fee calculation. Lead times begin after merchant confirmation. Prices exclude separately agreed delivery fees and extras.
 
 The source includes a D1 preview migration and a matching Supabase migration. The hosted tables stay in the private `solis` schema with RLS and direct client access denied.
+
+## Rover AI
+
+The Codex AI project is now listed as Rover AI (In development), replacing its former Open Model Console display name. It describes planned AI software, automation, and custom development alongside the existing local experimental training workspace. No public model endpoint, benchmark, patent status, subscription checkout, or customer metrics are claimed. Stable company IDs and the `open-model-console` operational slug are retained to preserve records and access. The public request page also supports `/companies/rover-ai`; the old path continues to work. The retained project icon is used until a separate brand asset is supplied.
+Seed entries can specify a stable slug independently of their display name; existing initialized rows retain their IDs and slugs.

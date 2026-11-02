@@ -71,3 +71,7 @@ The source includes a D1 preview migration and a matching Supabase migration. Th
 ## Company app destinations
 
 `app/order-destinations.json` maps the 13 linked company apps to verified booking, inquiry, brief, catalog, or self-service entry points. The public directory opens these destinations directly, using labels that describe their actual behavior. Existing `/companies/<slug>` links show a continuation page for mapped apps. `?via=solis` keeps the original Solis request form available. Companies without a mapped app continue to use that form. The map only applies while the configured app origin matches the company’s current website. No contact data, request data, tracking keys, or credentials are passed to app URLs; app orders remain in their own systems. The showcase mirrors these destinations.
+
+## Rover AI
+
+The Codex AI project is now listed as Rover AI (In development), replacing its former Open Model Console display name. It describes planned AI software, automation, and custom development alongside the existing local experimental training workspace. No public model endpoint, benchmark, patent status, subscription checkout, or customer metrics are claimed. Stable company IDs and the `open-model-console` operational slug are retained to preserve records and access. The public request page also supports `/companies/rover-ai`; the old path continues to work. The retained project icon is used until a separate brand asset is supplied.

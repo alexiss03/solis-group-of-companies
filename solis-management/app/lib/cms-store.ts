@@ -1,6 +1,6 @@
 export class CmsError extends Error { status: number; constructor(message:string,status=422){super(message);this.status=status;} }
 type Row=Record<string,any>;
-type Seed={sourceId:number;name:string;category:string;website:string;status:string;logo:string};
+type Seed={sourceId:number;slug?:string;name:string;category:string;website:string;status:string;logo:string};
 const slug=(name:string)=>name.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)||'company';
 const text=(v:unknown,max=2000)=>{const s=typeof v==='string'?v.trim():'';if(s.length>max)throw new CmsError(`A field exceeds ${max} characters.`);return s;};
 const required=(v:unknown,label:string)=>{const s=text(v,140);if(!s)throw new CmsError(`${label} is required.`);return s;};
@@ -26,7 +26,7 @@ export async function cmsRequest(request:Request,db:D1Database,owner:string,path
    return reply({companies:r[0].results,records:r[1].results.map((x:any)=>({...x,data:JSON.parse(x.data)})),movements:r[2].results,initialized:r[3].results.length>0});
   }
   if(request.method==='POST'&&path[0]==='initialize'){
-   await db.batch([...seed.map(s=>q('INSERT OR IGNORE INTO cms_companies (id,owner,name,slug,category,website,status,logo,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)',`${owner}:portfolio:${s.sourceId}`,owner,s.name,slug(s.name),s.category,s.website,s.status,s.logo,now,now)),q('INSERT OR IGNORE INTO cms_workspaces (owner,initialized_at) VALUES (?,?)',owner,now)]);
+   await db.batch([...seed.map(s=>q('INSERT OR IGNORE INTO cms_companies (id,owner,name,slug,category,website,status,logo,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)',`${owner}:portfolio:${s.sourceId}`,owner,s.name,s.slug||slug(s.name),s.category,s.website,s.status,s.logo,now,now)),q('INSERT OR IGNORE INTO cms_workspaces (owner,initialized_at) VALUES (?,?)',owner,now)]);
    const all=(await q('SELECT id,name,slug FROM cms_companies WHERE owner=?',owner).all<Row>()).results;
    const used=new Set(all.map(c=>c.slug).filter(Boolean));
    for(const row of all.filter(c=>!c.slug)){let key=slug(row.name);if(used.has(key))key+='-'+crypto.randomUUID().slice(0,8);used.add(key);await q('UPDATE cms_companies SET slug=? WHERE id=? AND owner=? AND slug IS NULL',key,row.id,owner).run();}

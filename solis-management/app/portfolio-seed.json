@@ -201,11 +201,12 @@
   },
   {
     "sourceId": 27,
-    "name": "Open Model Console",
+    "name": "Rover AI",
     "category": "Technology",
     "website": "",
     "status": "In development",
-    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/open-model.svg"
+    "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/open-model.svg",
+    "slug": "open-model-console"
   },
   {
     "sourceId": 28,
