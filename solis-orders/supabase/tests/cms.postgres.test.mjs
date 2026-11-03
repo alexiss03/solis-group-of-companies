@@ -13,7 +13,7 @@ async function postgresFixture(){
  const db=new AppDatabase(executor);return {pg,db};
 }
 const seed=[{sourceId:1,name:'Company A',category:'Design',website:'',status:'Concept',logo:''},{sourceId:2,name:'Company B',category:'Commerce',website:'',status:'Concept',logo:''}];
-async function fixture(){const {db,pg}=await postgresFixture();const call=async(path=[],body,owner='owner',method='POST',extra={})=>{const response=await cmsRequest(new Request('https://cms.example/api/cms/'+path.join('/'),{method:body?method:'GET',headers:{'Content-Type':'application/json',...extra},body:body?JSON.stringify(body):undefined}),db,owner,path,seed);return {status:response.status,data:await response.json()};};return {call,pg};}
+async function fixture(review={reviewedAt:'',entries:[]}){const {db,pg}=await postgresFixture();const call=async(path=[],body,owner='owner',method='POST',extra={})=>{const response=await cmsRequest(new Request('https://cms.example/api/cms/'+path.join('/'),{method:body?method:'GET',headers:{'Content-Type':'application/json',...extra},body:body?JSON.stringify(body):undefined}),db,owner,path,seed,review);return {status:response.status,data:await response.json()};};return {call,pg};}
 
 test('initialization is idempotent and all records are isolated by owner',async()=>{const {call}=await fixture();assert.equal((await call([],undefined,'')).status,401);await call(['initialize'],{});await call(['initialize'],{});const own=await call();assert.equal(own.data.companies.length,2);assert.equal(own.data.companies[0].slug,'company-a');const other=await call([],undefined,'other');assert.equal(other.data.companies.length,0);const id=own.data.companies[0].id;assert.equal((await call(['companies',id],{archived:true},'other','PATCH')).status,404);assert.equal((await call(['companies'],{name:'Bad',category:'Test',website:'javascript:alert(1)'})).status,422);assert.equal((await call(['initialize'],{},'owner','POST',{'Origin':'https://evil.example'})).status,403);});
 
@@ -33,4 +33,24 @@ test('development work validates dates and stages, isolates owners, and prevents
  row=(await call()).data.records[0];assert.equal((await call(['records',row.id],{archived:true,version:row.version},'owner','PATCH')).status,200);
  row=(await call()).data.records[0];assert.equal(row.archived,1);assert.equal((await call(['records',row.id],{archived:false,version:row.version},'owner','PATCH')).status,200);
  assert.equal((await call()).data.movements.length,0);assert.equal((await call([],undefined,'other')).data.records.length,0);
+});
+
+
+test('code review generation saves actionable tasks once and preserves edits, completion, archives, and company isolation',async()=>{
+ const review={reviewedAt:'2026-11-03',entries:[{sourceId:1,key:'first-step',name:'Company A',stage:'Concept',title:'Build the first slice',priority:'High',effort:'45 min',finding:'No implementation yet',action:'Create a clickable first flow',acceptance:'One complete path works',evidence:'README.md:1'},{sourceId:2,key:'verify-flow',name:'Company B',stage:'Concept',title:'Verify the order flow',priority:'Normal',effort:'60 min',finding:'Order endpoint exists',action:'Test a fixture order',acceptance:'One order is stored once',evidence:'app.js:1'}]};
+ const {call}=await fixture(review);await call(['initialize'],{});const state=(await call()).data;const [a,b]=state.companies;
+ assert.equal((await call(['development','generate'],{company_id:a.id},'other')).status,404);
+ const first=await call(['development','generate'],{company_id:a.id});assert.equal(first.data.created,1);assert.equal(first.data.unchanged,0);
+ let row=(await call()).data.records[0];assert.equal(row.company_id,a.id);assert.equal(row.status,'Backlog');assert.match(row.data.notes,/Done when:/);assert.match(row.data.notes,/Code evidence: README.md:1/);assert.match(row.data.dueDate,/^\d{4}-\d{2}-\d{2}$/);
+ assert.equal((await call(['development','generate'],{company_id:a.id})).data.created,0);
+ const edit={kind:'development',company_id:a.id,name:'Owner-edited step',status:'Done',version:row.version,data:{...row.data,notes:'Owner completion notes'}};
+ assert.equal((await call(['records',row.id],edit,'owner','PATCH')).status,200);
+ assert.equal((await call(['development','generate'],{})).data.created,1);
+ row=(await call()).data.records.find(r=>r.id===row.id);assert.equal(row.name,'Owner-edited step');assert.equal(row.data.notes,'Owner completion notes');assert.equal(row.status,'Done');
+ await call(['records',row.id],{archived:true,version:row.version},'owner','PATCH');
+ const concurrent=await Promise.all([call(['development','generate'],{}),call(['development','generate'],{})]);assert.equal(concurrent.reduce((n,r)=>n+r.data.created,0),0);assert.equal((await call()).data.records.length,2);
+ assert.equal((await call()).data.records.find(r=>r.id===row.id).archived,1);
+ assert.equal((await call(['development','generate'],{},'other')).data.created,0);
+ assert.equal((await call()).data.movements.length,0);
+ const none=await fixture();await none.call(['initialize'],{});assert.equal((await none.call(['development','generate'],{})).status,409);
 });

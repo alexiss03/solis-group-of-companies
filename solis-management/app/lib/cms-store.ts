@@ -1,5 +1,6 @@
 export class CmsError extends Error { status: number; constructor(message:string,status=422){super(message);this.status=status;} }
 type Row=Record<string,any>;
+type DevelopmentReview={reviewedAt:string;method?:string;entries:{sourceId:number;key:string;name:string;stage:string;title:string;priority:string;effort:string;finding:string;action:string;acceptance:string;evidence:string}[]};
 type Seed={sourceId:number;slug?:string;name:string;category:string;website:string;status:string;logo:string};
 const slug=(name:string)=>name.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)||'company';
 const text=(v:unknown,max=2000)=>{const s=typeof v==='string'?v.trim():'';if(s.length>max)throw new CmsError(`A field exceeds ${max} characters.`);return s;};
@@ -9,7 +10,7 @@ const choice=(v:unknown,values:string[],fallback:string)=>{const s=text(v||fallb
 const website=(v:unknown)=>{const s=text(v,1000);if(s){let u:URL;try{u=new URL(s);}catch{throw new CmsError('Enter a valid website URL.');}if(!['http:','https:'].includes(u.protocol))throw new CmsError('Use an HTTP or HTTPS URL.');}return s;};
 const reply=(data:unknown,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff'}});
 const fields:Record<string,string[]>={development:['type','assignee','dueDate','priority','notes'],suppliers:['contact','email','phone','address','notes'],employees:['role','department','email','phone','startDate','notes'],inventory:['category','unit','location','supplierId','currency','notes']};
-export async function cmsRequest(request:Request,db:D1Database,owner:string,path:string[],seed:Seed[]=[]) {
+export async function cmsRequest(request:Request,db:D1Database,owner:string,path:string[],seed:Seed[]=[],review:DevelopmentReview={reviewedAt:'',entries:[]}) {
  const q=(sql:string,...args:any[])=>db.prepare(sql).bind(...args);
  const company=async(id:string,archived=false)=>{const r=await q('SELECT * FROM cms_companies WHERE id=? AND owner=?',id,owner).first<Row>();if(!r||(!archived&&r.archived))throw new CmsError('Company not found or archived.',404);return r;};
  const record=async(id:string)=>{const r=await q('SELECT * FROM cms_records WHERE id=? AND owner=?',id,owner).first<Row>();if(!r)throw new CmsError('Record not found.',404);return r;};
@@ -23,7 +24,7 @@ export async function cmsRequest(request:Request,db:D1Database,owner:string,path
   }
   if(request.method==='GET'&&path.length===0){
    const r=await db.batch([q('SELECT * FROM cms_companies WHERE owner=? ORDER BY name COLLATE NOCASE',owner),q('SELECT * FROM cms_records WHERE owner=? ORDER BY name COLLATE NOCASE',owner),q('SELECT m.*,r.name AS item_name,c.name AS company_name FROM cms_movements m JOIN cms_records r ON r.id=m.item_id AND r.owner=m.owner JOIN cms_companies c ON c.id=m.company_id AND c.owner=m.owner WHERE m.owner=? ORDER BY m.created_at DESC,m.id DESC LIMIT 200',owner),q('SELECT * FROM cms_workspaces WHERE owner=?',owner)]);
-   return reply({companies:r[0].results,records:r[1].results.map((x:any)=>({...x,data:JSON.parse(x.data)})),movements:r[2].results,initialized:r[3].results.length>0});
+   return reply({companies:r[0].results,records:r[1].results.map((x:any)=>({...x,data:JSON.parse(x.data)})),movements:r[2].results,initialized:r[3].results.length>0,review:{reviewedAt:review.reviewedAt,companyCount:review.entries.length,method:review.method||''}});
   }
   if(request.method==='POST'&&path[0]==='initialize'){
    await db.batch([...seed.map(s=>q('INSERT OR IGNORE INTO cms_companies (id,owner,name,slug,category,website,status,logo,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)',`${owner}:portfolio:${s.sourceId}`,owner,s.name,s.slug||slug(s.name),s.category,s.website,s.status,s.logo,now,now)),q('INSERT OR IGNORE INTO cms_workspaces (owner,initialized_at) VALUES (?,?)',owner,now)]);
@@ -31,6 +32,22 @@ export async function cmsRequest(request:Request,db:D1Database,owner:string,path
    const used=new Set(all.map(c=>c.slug).filter(Boolean));
    for(const row of all.filter(c=>!c.slug)){let key=slug(row.name);if(used.has(key))key+='-'+crypto.randomUUID().slice(0,8);used.add(key);await q('UPDATE cms_companies SET slug=? WHERE id=? AND owner=? AND slug IS NULL',key,row.id,owner).run();}
    return reply({ok:true});
+  }
+  if(path.length===2&&path[0]==='development'&&path[1]==='generate'&&request.method==='POST'){
+   const b=await input(),companyId=text(b.company_id,140);if(companyId)await company(companyId);
+   if(!review.reviewedAt||!review.entries.length)throw new CmsError('No code review is available. Request a source review before generating development work.',409);
+   const all=(await q('SELECT * FROM cms_companies WHERE owner=? AND archived=0',owner).all<Row>()).results.filter(c=>!companyId||c.id===companyId);
+   const parts=new Intl.DateTimeFormat('en',{timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+   const datePart=(type:string)=>parts.find(p=>p.type===type)!.value,day=`${datePart('year')}-${datePart('month')}-${datePart('day')}`;
+   const planned=all.map(c=>({company:c,entry:review.entries.find(e=>c.id===`${owner}:portfolio:${e.sourceId}`)})).filter(x=>x.entry);
+   const inserts=planned.map(({company:c,entry:e})=>{
+    const entry=e!,id=`${owner}:development:${entry.sourceId}:${entry.key}`;
+    const notes=`Action today (${entry.effort}):\n${entry.action}\n\nDone when:\n${entry.acceptance}\n\nWhy this step:\n${entry.finding}\n\nCode evidence: ${entry.evidence}\nReviewed: ${review.reviewedAt} | Review stage: ${entry.stage} | Current company stage: ${c.status}\nSource review snapshot; review again after code changes.`;
+    const data={type:'Task',assignee:'',dueDate:day,priority:entry.priority,notes};
+    return q('INSERT OR IGNORE INTO cms_records (id,owner,company_id,kind,name,status,data,sku,quantity,reorder_level,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',id,owner,c.id,'development',entry.title,'Backlog',JSON.stringify(data),null,0,0,now,now);
+   });
+   const results=inserts.length?await db.batch(inserts):[],created=results.reduce((n,r)=>n+Number(r.meta.changes||0),0);
+   return reply({ok:true,created,unchanged:planned.length-created,unreviewed:all.length-planned.length,reviewedAt:review.reviewedAt,day});
   }
   if(path[0]==='companies'&&['POST','PATCH'].includes(request.method)){
    const b=await input(),old=path[1]?await company(path[1],true):null;if(request.method==='PATCH'&&!old)throw new CmsError('Company not found.',404);

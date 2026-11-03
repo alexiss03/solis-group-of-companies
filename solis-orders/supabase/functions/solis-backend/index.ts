@@ -3,6 +3,7 @@ import {AppDatabase} from './postgres.ts';
 import {commerceRequest,digest} from './commerce-store.ts';
 import {cmsRequest} from './cms-store.ts';
 import seed from './portfolio-seed.json' with {type:'json'};
+import review from './development-review.json' with {type:'json'};
 
 const sql=postgres(Deno.env.get('SUPABASE_DB_URL')!,{prepare:false,max:1,idle_timeout:20,connect_timeout:10,ssl:'require'});
 const db=new AppDatabase(sql);
@@ -28,7 +29,7 @@ Deno.serve(async(request:Request)=>{
   const forwarded=new Request(url,{method:body.method,headers,body:body.method==='GET'?undefined:body.body});
   if(body.service==='cms'){
    if(credential.scope!=='cms')return reply('Not authorized.',403);
-   return cmsRequest(forwarded,db,identity.userId,body.path,seed);
+   return cmsRequest(forwarded,db,identity.userId,body.path,seed,review);
   }
   if(body.service!=='commerce')return reply('Endpoint not found.',404);
   const bridge=credential.scope==='cms'||body.bridge===true;

@@ -81,3 +81,7 @@ The Codex AI project is now listed as Rover AI (In development), replacing its f
 The private CMS includes `/development` and `/companies/<slug>/development`. View company stages and record tasks or milestones with Backlog, In progress, Blocked, and Done stages, assignees, due dates, priorities, and notes. Search, filter overdue work, archive, and restore work items. Completion counts derive from recorded tasks and milestones; no delivery percentages or sample work are invented. Names entered as assignees do not grant access or send notifications.
 
 Development work uses the existing private `cms_records` table with kind `development`, retaining owner/company checks, strict date and enum validation, and optimistic version checks. No schema migration or new table privileges are required. Only the CMS credential can access CMS endpoints; public portfolio and merchant APIs cannot read development records. Company stages remain private CMS metadata and are edited in Companies.
+
+## Code-based development task generation
+
+The private CMS passes `development-review.json` to the shared CMS rules. `/development/generate` inserts owner-scoped development records from the server-owned review snapshot using stable objective IDs and conflict-safe inserts. Public commerce credentials cannot call this route. Repeated requests retain manual edits, completed work, and archived objectives. Recommendations are dated source-review guidance, not a live repository scan or proof of production readiness. No schema or access change is required.
