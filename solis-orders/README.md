@@ -75,3 +75,9 @@ The source includes a D1 preview migration and a matching Supabase migration. Th
 ## Rover AI
 
 The Codex AI project is now listed as Rover AI (In development), replacing its former Open Model Console display name. It describes planned AI software, automation, and custom development alongside the existing local experimental training workspace. No public model endpoint, benchmark, patent status, subscription checkout, or customer metrics are claimed. Stable company IDs and the `open-model-console` operational slug are retained to preserve records and access. The public request page also supports `/companies/rover-ai`; the old path continues to work. The retained project icon is used until a separate brand asset is supplied.
+
+## Development Hub
+
+The private CMS includes `/development` and `/companies/<slug>/development`. View company stages and record tasks or milestones with Backlog, In progress, Blocked, and Done stages, assignees, due dates, priorities, and notes. Search, filter overdue work, archive, and restore work items. Completion counts derive from recorded tasks and milestones; no delivery percentages or sample work are invented. Names entered as assignees do not grant access or send notifications.
+
+Development work uses the existing private `cms_records` table with kind `development`, retaining owner/company checks, strict date and enum validation, and optimistic version checks. No schema migration or new table privileges are required. Only the CMS credential can access CMS endpoints; public portfolio and merchant APIs cannot read development records. Company stages remain private CMS metadata and are edited in Companies.

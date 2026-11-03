@@ -9,7 +9,7 @@ const numeric=(v:unknown,label:string,min=0,max=1e9)=>{const n=Number(v??0);if(!
 const choice=(v:unknown,values:string[],fallback:string)=>{const s=text(v||fallback,80);if(!values.includes(s))throw new CmsError('Choose a valid status.');return s;};
 const website=(v:unknown)=>{const s=text(v,1000);if(s){let u:URL;try{u=new URL(s);}catch{throw new CmsError('Enter a valid website URL.');}if(!['http:','https:'].includes(u.protocol))throw new CmsError('Use an HTTP or HTTPS URL.');}return s;};
 const reply=(data:unknown,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff'}});
-const fields:Record<string,string[]>={suppliers:['contact','email','phone','address','notes'],employees:['role','department','email','phone','startDate','notes'],inventory:['category','unit','location','supplierId','currency','notes']};
+const fields:Record<string,string[]>={development:['type','assignee','dueDate','priority','notes'],suppliers:['contact','email','phone','address','notes'],employees:['role','department','email','phone','startDate','notes'],inventory:['category','unit','location','supplierId','currency','notes']};
 export async function cmsRequest(request:Request,db:D1Database,owner:string,path:string[],seed:Seed[]=[]) {
  const q=(sql:string,...args:any[])=>db.prepare(sql).bind(...args);
  const company=async(id:string,archived=false)=>{const r=await q('SELECT * FROM cms_companies WHERE id=? AND owner=?',id,owner).first<Row>();if(!r||(!archived&&r.archived))throw new CmsError('Company not found or archived.',404);return r;};
@@ -59,7 +59,11 @@ export async function cmsRequest(request:Request,db:D1Database,owner:string,path
     data.unit=data.unit||'pcs';data.currency=choice(data.currency,['PHP','USD','EUR','GBP','JPY'],'PHP');data.unitCost=numeric(b.data?.unitCost,'Unit cost',0,1e12);
     if(data.supplierId){const s=await record(data.supplierId);if(s.kind!=='suppliers'||s.company_id!==companyId||s.archived)throw new CmsError('Choose an active supplier from this company.');}
    }
-   const status=kind==='employees'?choice(b.status,['Active','On leave','Inactive'],'Active'):choice(b.status,['Active','Inactive'],'Active');
+   if(kind==='development'){
+    data.type=choice(data.type,['Task','Milestone'],'Task');data.priority=choice(data.priority,['Low','Normal','High'],'Normal');
+    if(data.dueDate&&(!/^\d{4}-\d{2}-\d{2}$/.test(data.dueDate)||Number.isNaN(Date.parse(data.dueDate+'T00:00:00Z'))||new Date(data.dueDate+'T00:00:00Z').toISOString().slice(0,10)!==data.dueDate))throw new CmsError('Enter a valid due date.');
+   }
+   const status=kind==='development'?choice(b.status,['Backlog','In progress','Blocked','Done'],'Backlog'):kind==='employees'?choice(b.status,['Active','On leave','Inactive'],'Active'):choice(b.status,['Active','Inactive'],'Active');
    const sku=kind==='inventory'?(text(b.sku,80).toUpperCase()||null):null,reorder=kind==='inventory'?numeric(b.reorder_level,'Reorder level'):0;
    if(old){const result=await q('UPDATE cms_records SET name=?,status=?,data=?,sku=?,reorder_level=?,version=version+1,updated_at=? WHERE id=? AND owner=? AND version=?',name,status,JSON.stringify(data),sku,reorder,now,old.id,owner,old.version).run();if(!result.meta.changes)throw new CmsError('This record changed. Refresh and try again.',409);}
    else{
