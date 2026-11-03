@@ -4,7 +4,7 @@ Private, persistent company operations CMS. The existing public showcase remains
 
 ## Features
 
-- A company directory, initially copied from the 31-company public portfolio on the first signed-in visit.
+- A company directory, initially copied from the 43-company public portfolio on the first signed-in visit.
 - Add, edit, archive, and restore suppliers, employees, inventory items, and companies.
 - Company filters, search, low/out-of-stock views, and CSV export of the current view.
 - Inventory SKU, unit, supplier, storage location, reorder level, cost, and currency.
@@ -70,3 +70,13 @@ Development work uses the existing private `cms_records` table with kind `develo
 The server matches only stable portfolio company IDs owned by the current CMS user and respects the selected company scope. Generated record IDs combine owner, portfolio source ID, and objective key, so retries and concurrent requests do not duplicate work. Existing edits, deadlines, completed tasks, and archives are retained; a finished objective is not recreated on a new day. New tasks use the current Manila due date. The daily list includes all eligible work (up to 200), with expandable action/evidence notes. Custom companies without review coverage are reported rather than assigned invented recommendations.
 
 The generator uses `/api/cms/development/generate`, the existing owner-authenticated Supabase backend, and `cms_records`; no new table, permission, AI provider, or credential is needed. The full local inspection index and review report remain outside the public source repository. Only sanitized recommendations and relative source paths are included in the app snapshot.
+
+## November 4 company additions
+
+Added 12 newly discovered Codex projects: Fastcoin, Forma, SOLANA, Maven, Imagine Games, Local Rep, Trendcut, Este High Jewelry, Kapeng Barako, Helios, Drafting Company, and Verse. The portfolio now contains 43 company entries. Public websites use verified Sites origins; Fastcoin and Local Rep have no published website link. Existing IDs, private edits, merchant grants, operational records, and development tasks are preserved. New companies have their own request and operations spaces. Prior development recommendations remain a dated 31-company review; newly added companies are reported as needing source review rather than assigned invented development tasks.
+
+## Marketing Hub / Social Media
+
+The private CMS has `/marketing/social-media`, `/marketing`, and a company-specific `/companies/<slug>/marketing` view. Contacts store company, platform, email, social handle, profile link, status, and notes. Content records store captions, planned/publication dates, post links, and Draft/Ready/Planned/Published stages. Planning records are saved in Supabase; actual social publishing is manual. Published status requires a post URL and date. No social network account is connected, no notifications are sent, and a contact does not grant workspace access. Test-domain addresses are labelled as test contacts.
+
+Marketing records use the existing private `cms_records` table with kind `marketing`. Owner isolation, company checks, URL/date validation, archive/restore, and optimistic versions are retained. No new database grants or schema migration is required. User-provided contacts are runtime data and are excluded from source and the public portfolio.

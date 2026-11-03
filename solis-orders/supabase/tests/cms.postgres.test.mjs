@@ -54,3 +54,23 @@ test('code review generation saves actionable tasks once and preserves edits, co
  assert.equal((await call()).data.movements.length,0);
  const none=await fixture();await none.call(['initialize'],{});assert.equal((await none.call(['development','generate'],{})).status,409);
 });
+
+
+test('social media records stay private and validate contacts, dates, links, and published evidence',async()=>{
+ const {call}=await fixture();await call(['initialize'],{});const company=(await call()).data.companies[0];
+ const contact={kind:'marketing',company_id:company.id,name:'Social contact',status:'Active',data:{type:'Contact',platform:'Instagram',email:'demo@example.test'}};
+ assert.equal((await call(['records'],contact)).status,201);let row=(await call()).data.records.find(r=>r.kind==='marketing');assert.equal(row.data.category,'Social Media');assert.equal(row.data.email,'demo@example.test');
+ assert.equal((await call(['records'],{...contact,data:{type:'Contact'}})).status,422);
+ assert.equal((await call(['records'],{...contact,data:{...contact.data,profileUrl:'javascript:alert(1)'}})).status,422);
+ assert.equal((await call(['records'],{...contact,data:{...contact.data,platform:'Unsupported'}})).status,422);
+ assert.equal((await call(['records',row.id],{...contact,version:row.version},'other','PATCH')).status,404);
+ const post={kind:'marketing',company_id:company.id,name:'Product launch',status:'Planned',data:{type:'Post',platform:'Instagram',publishDate:'2026-11-04',caption:'Draft content'}};
+ assert.equal((await call(['records'],post)).status,201);
+ assert.equal((await call(['records'],{...post,data:{...post.data,publishDate:'2026-02-30'}})).status,422);
+ assert.equal((await call(['records'],{...post,status:'Published'})).status,422);
+ assert.equal((await call(['records'],{...post,status:'Published',data:{...post.data,postUrl:'https://example.com/post'}})).status,201);
+ assert.equal((await call(['records',row.id],{...contact,version:row.version},'owner','PATCH')).status,200);
+ assert.equal((await call(['records',row.id],{...contact,version:row.version},'owner','PATCH')).status,409);
+ row=(await call()).data.records.find(r=>r.id===row.id);assert.equal((await call(['records',row.id],{archived:true,version:row.version},'owner','PATCH')).status,200);
+ assert.equal((await call([],undefined,'other')).data.records.length,0);assert.equal((await call()).data.movements.length,0);
+});

@@ -63,5 +63,55 @@
     "url": "https://tara-everyday-ride-masol.cynammon.chatgpt.site#book-view",
     "label": "Book a demo ride",
     "note": "Choose a car, tricycle, or motorcycle in Tara. Rides, fares, and driver matching are simulated."
+  },
+  "forma": {
+    "url": "https://forma-house-architecture-mas.cynammon.chatgpt.site#contact",
+    "label": "Start a project brief",
+    "note": "The planner creates a downloadable brief; it does not submit an inquiry."
+  },
+  "solana": {
+    "url": "https://solana-swim-bikini.cynammon.chatgpt.site#collection",
+    "label": "Browse swimwear",
+    "note": "Explore a concept collection and checkout preview. Payments and fulfillment are not connected."
+  },
+  "maven": {
+    "url": "https://skillspace-training-studio.cynammon.chatgpt.site",
+    "label": "Find an expert trainer",
+    "note": "Explore trainer profiles and booking workflow previews in Maven. Online training room creation requires sign-in."
+  },
+  "imagine-games": {
+    "url": "https://imagine-games-studio-26.cynammon.chatgpt.site#games",
+    "label": "Explore the games",
+    "note": "Explore studio concepts, a linked game, and the browser arcade."
+  },
+  "trendcut": {
+    "url": "https://trendcut-studio-mas.cynammon.chatgpt.site",
+    "label": "Open the ad studio",
+    "note": "Discover dated product trends and use the motion-ad editor. AI tools depend on the app’s activation."
+  },
+  "este-high-jewelry": {
+    "url": "https://este-high-jewelry-masol.cynammon.chatgpt.site#creations",
+    "label": "Explore the collection",
+    "note": "Browse illustrative creations and prepare a local private-viewing inquiry; no appointment is reserved."
+  },
+  "kapeng-barako": {
+    "url": "https://kapeng-barako-kape-at-kuwento.cynammon.chatgpt.site#menu",
+    "label": "Explore the coffee menu",
+    "note": "Browse concept drinks, pairings, and brewing tools. This page does not place an order."
+  },
+  "helios": {
+    "url": "https://helios-next-solar.cynammon.chatgpt.site#contact",
+    "label": "Prepare a solar brief",
+    "note": "Use the concept calculator and consultation brief; results require a professional site assessment."
+  },
+  "drafting-company": {
+    "url": "https://drafting-company-studio.cynammon.chatgpt.site",
+    "label": "Start a drafting brief",
+    "note": "Explore drafting services and create a downloadable local brief; no inquiry is sent."
+  },
+  "verse": {
+    "url": "https://verse-spoken-poetry-studio-mary.cynammon.chatgpt.site",
+    "label": "Open the poetry studio",
+    "note": "Record thoughts and edit poetry. AI writing requires activation; no unavailable generation is simulated."
   }
 }

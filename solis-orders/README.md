@@ -1,6 +1,6 @@
 # Solis Orders & Services
 
-A public company request portal and protected merchant order workspace. The 31 public company profiles are seeded from the Solis public portfolio. The existing inventory CMS remains private.
+A public company request portal and protected merchant order workspace. The 43 public company profiles are seeded from the Solis public portfolio. The existing inventory CMS remains private.
 
 ## Customer flow
 
@@ -85,3 +85,13 @@ Development work uses the existing private `cms_records` table with kind `develo
 ## Code-based development task generation
 
 The private CMS passes `development-review.json` to the shared CMS rules. `/development/generate` inserts owner-scoped development records from the server-owned review snapshot using stable objective IDs and conflict-safe inserts. Public commerce credentials cannot call this route. Repeated requests retain manual edits, completed work, and archived objectives. Recommendations are dated source-review guidance, not a live repository scan or proof of production readiness. No schema or access change is required.
+
+## November 4 company additions
+
+Added 12 newly discovered Codex projects: Fastcoin, Forma, SOLANA, Maven, Imagine Games, Local Rep, Trendcut, Este High Jewelry, Kapeng Barako, Helios, Drafting Company, and Verse. The portfolio now contains 43 company entries. Public websites use verified Sites origins; Fastcoin and Local Rep have no published website link. Existing IDs, private edits, merchant grants, operational records, and development tasks are preserved. New companies have their own request and operations spaces. Prior development recommendations remain a dated 31-company review; newly added companies are reported as needing source review rather than assigned invented development tasks.
+
+## Marketing Hub / Social Media
+
+The private CMS has `/marketing/social-media`, `/marketing`, and a company-specific `/companies/<slug>/marketing` view. Contacts store company, platform, email, social handle, profile link, status, and notes. Content records store captions, planned/publication dates, post links, and Draft/Ready/Planned/Published stages. Planning records are saved in Supabase; actual social publishing is manual. Published status requires a post URL and date. No social network account is connected, no notifications are sent, and a contact does not grant workspace access. Test-domain addresses are labelled as test contacts.
+
+Marketing records use the existing private `cms_records` table with kind `marketing`. Owner isolation, company checks, URL/date validation, archive/restore, and optimistic versions are retained. No new database grants or schema migration is required. User-provided contacts are runtime data and are excluded from source and the public portfolio.

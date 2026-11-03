@@ -246,5 +246,101 @@
     "description": "A ride-booking prototype for cars, tricycles, and motorcycles, with Batangas and Metro Manila demo areas. Rides, drivers, and fares are simulated.",
     "website": "https://tara-everyday-ride-masol.cynammon.chatgpt.site",
     "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/tara.svg"
+  },
+  {
+    "slug": "fastcoin",
+    "name": "Fastcoin",
+    "category": "Technology",
+    "description": "A digital payments product concept with a website in development.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "forma",
+    "name": "Forma",
+    "category": "Style & Design",
+    "description": "An architecture and home construction concept with house designs, project studies, and a downloadable project planner.",
+    "website": "https://forma-house-architecture-mas.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "solana",
+    "name": "SOLANA",
+    "category": "Style & Design",
+    "description": "A swimwear storefront concept with collection browsing, saved favorites, a shopping bag, and a checkout preview.",
+    "website": "https://solana-swim-bikini.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "maven",
+    "name": "Maven",
+    "category": "Technology",
+    "description": "A corporate trainer directory and booking workflow preview with native small-group online training rooms.",
+    "website": "https://skillspace-training-studio.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "imagine-games",
+    "name": "Imagine Games",
+    "category": "Culture & Community",
+    "description": "A game studio website with game discovery, concept worlds, and a playable browser arcade.",
+    "website": "https://imagine-games-studio-26.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "local-rep",
+    "name": "Local Rep",
+    "category": "Living & Wellbeing",
+    "description": "A native iPhone workout planner with editable routines, workout logging, local profiles, and progress history.",
+    "website": "",
+    "logo": ""
+  },
+  {
+    "slug": "trendcut",
+    "name": "Trendcut",
+    "category": "Technology",
+    "description": "Product discovery with dated TikTok Shop tracker snapshots and a browser-based motion-ad editor.",
+    "website": "https://trendcut-studio-mas.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "este-high-jewelry",
+    "name": "Este High Jewelry",
+    "category": "Style & Design",
+    "description": "An illustrative high-jewelry collection with saved creations and a downloadable private-viewing inquiry brief.",
+    "website": "https://este-high-jewelry-masol.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "kapeng-barako",
+    "name": "Kapeng Barako",
+    "category": "Commerce",
+    "description": "A Filipino coffee concept with drink discovery, merienda pairings, and interactive brewing guides.",
+    "website": "https://kapeng-barako-kape-at-kuwento.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "helios",
+    "name": "Helios",
+    "category": "Technology",
+    "description": "A solar technology concept with interactive panel explanations, an energy calculator, and a consultation brief.",
+    "website": "https://helios-next-solar.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "drafting-company",
+    "name": "Drafting Company",
+    "category": "Style & Design",
+    "description": "An architectural drafting concept with service details, project studies, and a downloadable project brief.",
+    "website": "https://drafting-company-studio.cynammon.chatgpt.site",
+    "logo": ""
+  },
+  {
+    "slug": "verse",
+    "name": "Verse",
+    "category": "Culture & Community",
+    "description": "A spoken-poetry studio for recording thoughts, editing poems, and voice playback; AI tools require activation.",
+    "website": "https://verse-spoken-poetry-studio-mary.cynammon.chatgpt.site",
+    "logo": ""
   }
 ]

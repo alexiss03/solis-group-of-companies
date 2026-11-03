@@ -247,5 +247,113 @@
     "website": "https://tara-everyday-ride-masol.cynammon.chatgpt.site",
     "status": "Published",
     "logo": "https://solis-group-of-companies.cynammon.chatgpt.site/assets/logos/tara.svg"
+  },
+  {
+    "sourceId": 35,
+    "slug": "fastcoin",
+    "name": "Fastcoin",
+    "category": "Technology",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 36,
+    "slug": "forma",
+    "name": "Forma",
+    "category": "Style & Design",
+    "website": "https://forma-house-architecture-mas.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 37,
+    "slug": "solana",
+    "name": "SOLANA",
+    "category": "Style & Design",
+    "website": "https://solana-swim-bikini.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 38,
+    "slug": "maven",
+    "name": "Maven",
+    "category": "Technology",
+    "website": "https://skillspace-training-studio.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 39,
+    "slug": "imagine-games",
+    "name": "Imagine Games",
+    "category": "Culture & Community",
+    "website": "https://imagine-games-studio-26.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 40,
+    "slug": "local-rep",
+    "name": "Local Rep",
+    "category": "Living & Wellbeing",
+    "website": "",
+    "status": "In development",
+    "logo": ""
+  },
+  {
+    "sourceId": 41,
+    "slug": "trendcut",
+    "name": "Trendcut",
+    "category": "Technology",
+    "website": "https://trendcut-studio-mas.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 42,
+    "slug": "este-high-jewelry",
+    "name": "Este High Jewelry",
+    "category": "Style & Design",
+    "website": "https://este-high-jewelry-masol.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 43,
+    "slug": "kapeng-barako",
+    "name": "Kapeng Barako",
+    "category": "Commerce",
+    "website": "https://kapeng-barako-kape-at-kuwento.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 44,
+    "slug": "helios",
+    "name": "Helios",
+    "category": "Technology",
+    "website": "https://helios-next-solar.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 45,
+    "slug": "drafting-company",
+    "name": "Drafting Company",
+    "category": "Style & Design",
+    "website": "https://drafting-company-studio.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
+  },
+  {
+    "sourceId": 46,
+    "slug": "verse",
+    "name": "Verse",
+    "category": "Culture & Community",
+    "website": "https://verse-spoken-poetry-studio-mary.cynammon.chatgpt.site",
+    "status": "Published",
+    "logo": ""
   }
 ]
